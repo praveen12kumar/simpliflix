@@ -3,9 +3,10 @@
 import Input from "@/components/atoms/Input";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Auth() {
-    
+export default function SignIn() {
+    const router = useRouter();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
@@ -50,6 +51,7 @@ export default function Auth() {
                 <p className="text-xs mt-10 text-neutral-400 text-center ">
                     New to Simplifilix? &nbsp;
                     <span
+                        onClick={()=> router.push('/auth/signUp')}
                         className="text-white ml-1 cursor-pointer hover:underline"
                     >
                     Sign up now
